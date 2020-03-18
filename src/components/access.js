@@ -42,7 +42,7 @@ const Access = (props) => {
   const [username, setUsername] = useState('')
   const history = useHistory()
 
-  // heres how i change if logged in or not, as well as setting the username and password
+  // heres how i change if logged in or not, as well as sends the username to be logged, password does not actually get saved
   // this runs when submitted
   const login = (e) => {
     e.preventDefault()
@@ -60,7 +60,7 @@ const Access = (props) => {
             Account Login
         </Typography>
           {/* this form handles the submit and runs the login function when submited */}
-          {/* it also sets username to what is typed in text field */}
+          {/* it also sends an event sets username to what is typed in text field */}
           <form onSubmit={login}>
             <TextField
               required
@@ -71,7 +71,7 @@ const Access = (props) => {
               value={username}
               className={classes.text}
             />
-            {/* sets password to what is typed in text field */}
+            {/* sends an event and sets password to what is typed in text field */}
             <TextField
               required
               id="outlined-password-input"

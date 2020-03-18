@@ -1,9 +1,14 @@
+// this is my app's state
 export default {
+	// this is state for user, this declares user is not logged in
+	// this is manipulated if login form is submitted
 	user: 
 		{
 			username: false,
 		},
 	
+	// list of objects, these are the listings and the basic info that goes with them
+	// this is what i reference on the listing component
 	place: [
 		{
 			"id": 1,
@@ -21,6 +26,9 @@ export default {
 			"address": "2508 East Riverside Dr. Austin, TX 78741"
 		},
 	],
+
+	// list of objects, these are the details for when you click a specific listing
+	// referenced on details component
 	deets: [
 		{
 			"id": 1,
