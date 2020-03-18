@@ -1,26 +1,23 @@
+// this is my main app file
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Nav from './components/navBar'
+import Router from './Router'
+import { BrowserRouter } from 'react-router-dom'
+import { Provider } from 'react-redux'
+import store from './redux/store'
 
-
+//app component
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Provider store={store}>
+      <BrowserRouter>
+        {/* this displays the nav bar, and router contents */}
+        {/* the router contents consist of the paths */}
+        <Nav />
+        <Router />
+      </BrowserRouter>
+    </Provider>
   );
 }
 
