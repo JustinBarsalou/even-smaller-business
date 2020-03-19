@@ -12,8 +12,8 @@ function App() {
   return (
     <Provider store={store}>
       <BrowserRouter>
-        {/* this displays the nav bar, and router contents */}
-        {/* the router contents consist of the paths */}
+        {/* this displays the nav bar across all routes */}
+        {/* the router contents consist of the paths and componenets */}
         <Nav />
         <Router />
       </BrowserRouter>
