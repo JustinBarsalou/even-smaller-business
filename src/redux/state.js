@@ -1,6 +1,6 @@
 // this is my app's state
 export default {
-	// this is state for user, this declares user is not logged in
+	// this is state for user, this declares user is not logged in as default
 	// this is manipulated if login form is submitted
 	user: 
 		{

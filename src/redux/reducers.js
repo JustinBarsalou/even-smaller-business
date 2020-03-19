@@ -1,5 +1,11 @@
+// this is my reducers file
+// here is where the state is manipulated 
+// there is a reducer for each piece of state
+// based on the action triggered, different parts of state are changed
 import { combineReducers } from 'redux'
 
+// this reducer updates the place state by adding or removing
+// place state is used for normal listing page
 const place = (state = [], action) => {
 	switch (action.type) {
 		case 'ADD_PLACE':
@@ -13,7 +19,8 @@ const place = (state = [], action) => {
 	}
 }
 
-
+// this reducer updates user state (logged in or not)
+// allows for addListing
 const user = (state = null, action) => {
 	switch (action.type) {
 		case 'LOGIN':
@@ -25,6 +32,7 @@ const user = (state = null, action) => {
 	}
 }
 
+// this reducer updates the detailed listing state
 const deets = (state = null, action) => {
 	switch (action.type) {
 		case 'LOGIN':

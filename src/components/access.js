@@ -43,7 +43,7 @@ const Access = (props) => {
   const history = useHistory()
 
   // heres how i change if logged in or not, as well as sends the username to be logged, password does not actually get saved
-  // this runs when submitted
+  // this runs when form is submitted
   const login = (e) => {
     e.preventDefault()
     document.cookie = 'loggedIn=true;max-age = 60*1000'
