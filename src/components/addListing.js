@@ -51,6 +51,7 @@ class AddListing extends Component {
         }
     }
 
+    // this renders the form you fill out to add listing 
     render() {
         return (
             <Fragment>
