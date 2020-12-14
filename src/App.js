@@ -6,6 +6,8 @@ import Router from './Router'
 import { BrowserRouter } from 'react-router-dom'
 import { Provider } from 'react-redux'
 import store from './redux/store'
+require('dotenv').config()
+console.log(process.env.REACT_API_KEY)
 
 //app component
 function App() {

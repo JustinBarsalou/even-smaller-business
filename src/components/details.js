@@ -4,6 +4,9 @@ import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import Typography from '@material-ui/core/Typography';
 import { GoogleMap, withScriptjs, withGoogleMap, Marker } from 'react-google-maps'
+import env from "react-dotenv";
+
+
   
 
 // this function sets up the map, with the correct address for the listing clicked on
@@ -58,12 +61,17 @@ const Details = (props) => {
   // locally storing values
   const id = props.match.params.id
   const place = props.place.find(c => c.id === Number(id))
-  const deets = props.deets.find(c => c.id === Number(id))
-  lat = deets.lat;
-  lng = deets.lng;
-  oneHalfURL = 'https://maps.googleapis.com/maps/api/js?key=';
-  twoHalfURL = '&callback=initMap&libraries=&v=weekly'
-  eyedee = '';
+  // const deets = props.deets.find(c => c.id === Number(id))
+  lat = place.lat;
+  lng = place.lng;
+
+  // oneHalfURL = 'https://maps.googleapis.com/maps/api/js?key=';
+  // twoHalfURL = '&callback=initMap&libraries=&v=weekly'
+  // eyedee = 'AIzaSyDxxkxTuBdjsmuisZpwyNVOy2MFwOC1iV0';
+  ///////////////////////////////////////////////////////////
+  oneHalfURL = 'https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=';
+  eyedee = process.env.REACT_APP_API_KEY;
+  console.log('eyedee: ' + eyedee)
 
   // this renders the detailed page of the listing
   return (
@@ -74,13 +82,13 @@ const Details = (props) => {
           <Typography className={classes.header}>{`${place.name}`}</Typography><br/>
           <Typography>{`${place.hours}`}</Typography><br/>
           <Typography>{`${place.address}`}</Typography><br/>
-          <Typography>{`${deets.details}`}</Typography><br/>
+          <Typography>{`${place.details}`}</Typography><br/>
         </div>
         <div style={{width: '100%', height: '50vh'}}>
           {/* map display */}
           <WrappedMap
-            // googleMapURL={'https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=AIzaSyA_ru3F_aRvWek6L40K3adwGXgHwVkfIlg'}
-            googleMapURL= {oneHalfURL + eyedee + twoHalfURL}
+            googleMapURL={oneHalfURL + eyedee}
+            // googleMapURL= {oneHalfURL + process.env.REACT_APP_API_KEY + twoHalfURL}
             loadingElement={<div style={{height: '100%'}} />}
             containerElement={<div style={{height: '100%'}} />}
             mapElement={<div style={{height: '100%'}} />}
