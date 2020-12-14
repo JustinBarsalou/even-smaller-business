@@ -53,7 +53,6 @@ var eyedee;
 var oneHalfURL, twoHalfURL;
 
 
-
 // detailed listing component
 const Details = (props) => {
   const classes = useStyles();
