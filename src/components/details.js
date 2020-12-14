@@ -67,7 +67,6 @@ const Details = (props) => {
 
   // oneHalfURL = 'https://maps.googleapis.com/maps/api/js?key=';
   // twoHalfURL = '&callback=initMap&libraries=&v=weekly'
-  // eyedee = 'AIzaSyDxxkxTuBdjsmuisZpwyNVOy2MFwOC1iV0';
   ///////////////////////////////////////////////////////////
   oneHalfURL = 'https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=';
   eyedee = process.env.REACT_APP_API_KEY;
