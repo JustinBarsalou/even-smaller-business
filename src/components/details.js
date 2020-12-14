@@ -14,7 +14,7 @@ function Map() {
     defaultCenter={{ lat: Number(`${lat}`), lng: Number(`${lng}`) }} 
   >
     <Marker
-    key={eyedee}
+    key= {eyedee}
     position={{ lat: Number(`${lat}`), lng: Number(`${lng}`) }}/>
   </GoogleMap>)
 }
@@ -47,6 +47,9 @@ const useStyles = makeStyles({
 var lat;
 var lng;
 var eyedee;
+var oneHalfURL, twoHalfURL;
+
+
 
 // detailed listing component
 const Details = (props) => {
@@ -55,11 +58,12 @@ const Details = (props) => {
   // locally storing values
   const id = props.match.params.id
   const place = props.place.find(c => c.id === Number(id))
-
   const deets = props.deets.find(c => c.id === Number(id))
   lat = deets.lat;
   lng = deets.lng;
-  eyedee = deets.id;
+  oneHalfURL = 'https://maps.googleapis.com/maps/api/js?key=';
+  twoHalfURL = '&callback=initMap&libraries=&v=weekly'
+  eyedee = '';
 
   // this renders the detailed page of the listing
   return (
@@ -70,12 +74,13 @@ const Details = (props) => {
           <Typography className={classes.header}>{`${place.name}`}</Typography><br/>
           <Typography>{`${place.hours}`}</Typography><br/>
           <Typography>{`${place.address}`}</Typography><br/>
-          {/* <Typography>{`${deets.details}`}</Typography><br/> */}
+          <Typography>{`${deets.details}`}</Typography><br/>
         </div>
         <div style={{width: '100%', height: '50vh'}}>
           {/* map display */}
           <WrappedMap
-            googleMapURL={'https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=AIzaSyA_ru3F_aRvWek6L40K3adwGXgHwVkfIlg'}
+            // googleMapURL={'https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=AIzaSyA_ru3F_aRvWek6L40K3adwGXgHwVkfIlg'}
+            googleMapURL= {oneHalfURL + eyedee + twoHalfURL}
             loadingElement={<div style={{height: '100%'}} />}
             containerElement={<div style={{height: '100%'}} />}
             mapElement={<div style={{height: '100%'}} />}
