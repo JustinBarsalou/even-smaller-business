@@ -55,6 +55,7 @@ const Details = (props) => {
   // locally storing values
   const id = props.match.params.id
   const place = props.place.find(c => c.id === Number(id))
+
   const deets = props.deets.find(c => c.id === Number(id))
   lat = deets.lat;
   lng = deets.lng;
@@ -69,7 +70,7 @@ const Details = (props) => {
           <Typography className={classes.header}>{`${place.name}`}</Typography><br/>
           <Typography>{`${place.hours}`}</Typography><br/>
           <Typography>{`${place.address}`}</Typography><br/>
-          <Typography>{`${deets.details}`}</Typography><br/>
+          {/* <Typography>{`${deets.details}`}</Typography><br/> */}
         </div>
         <div style={{width: '100%', height: '50vh'}}>
           {/* map display */}

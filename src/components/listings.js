@@ -41,8 +41,7 @@ const Listings = (props) => {
 								Description</TableCell>
 							<TableCell align="right">Hours</TableCell>
 							<TableCell align="right">Address</TableCell>
-							{props.user.username &&
-								<TableCell align="right">Remove</TableCell>}
+							{<TableCell align="right">Remove</TableCell>}
 						</TableRow>
 					</TableHead>
           {/* this maps through the array of listings and displays the information accordingly  */}
@@ -58,7 +57,7 @@ const Listings = (props) => {
 								<TableCell align="right">{row.description}</TableCell>
 								<TableCell align="right">{row.hours}</TableCell>
 								<TableCell align="right">{row.address}</TableCell>
-								{props.user.username && <TableCell align="right">
+								{<TableCell align="right">
                   {/* this is a button to delete a listing from the table */}
 									<Button>
 										<DeleteIcon onClick={() => props.removePlace(idx)}
@@ -74,7 +73,7 @@ const Listings = (props) => {
       {/* the user cant see this unless logged in  */}
 			</TableContainer>
 			<div className="addButton">
-				{props.user.username && <AddListing />}
+				{<AddListing />}
 			</div>
 		</div>
 	)

@@ -30,9 +30,9 @@ export default function Nav(props) {
           <li className="nav-list-item">
           <Link to="/Listings">Listings</Link>
           </li>
-          <li className="nav-list-item">
+          {/* <li className="nav-list-item">
           <Link to="/access">LogIn</Link>
-          </li>
+          </li> */}
         </Toolbar>
       </AppBar>
     </div>

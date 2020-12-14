@@ -11,6 +11,8 @@ import { removePlace } from '../redux/actions'
 const mapStateToProps = (state) => {
 	return {
 			place: state.place,
+			address: state.place.address,
+			deets: state.deets,
 			user: state.user,
 	}
 }

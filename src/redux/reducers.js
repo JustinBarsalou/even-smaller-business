@@ -21,16 +21,16 @@ const place = (state = [], action) => {
 
 // this reducer updates user state (logged in or not)
 // allows for addListing
-const user = (state = null, action) => {
-	switch (action.type) {
-		case 'LOGIN':
-			return {
-				username: action.value
-			}
-		default:
-			return state
-	}
-}
+// const user = (state = null, action) => {
+// 	switch (action.type) {
+// 		case 'LOGIN':
+// 			return {
+// 				username: action.value
+// 			}
+// 		default:
+// 			return state
+// 	}
+// }
 
 // this reducer updates the detailed listing state
 const deets = (state = null, action) => {
@@ -44,4 +44,4 @@ const deets = (state = null, action) => {
 	}
 }
 
-export default combineReducers({ place, user, deets })
+export default combineReducers({ place,  deets })
